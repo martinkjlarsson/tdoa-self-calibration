@@ -1,8 +1,10 @@
-function solvers = get_offset_solvers()
+function solvers = get_offset_solvers(rank,m,n)
 % GET_OFFSET_SOLVERS Get an array of solvers for finding TDOA offsets
 %   solvers = GET_OFFSET_SOLVERS() gets an array of solvers that take an m
 %       by n matrix of TDOA measurements between m receivers and n senders,
 %       and returns n offsets for the senders.
+%   solvers = GET_OFFSET_SOLVERS(rank,m,n) filters the solvers by rank,
+%       number of receivers or number of senders.
 
     solvers = [];
     
@@ -41,5 +43,15 @@ function solvers = get_offset_solvers()
     solvers(end).n = 8;
     solvers(end).rank = 3;
     solvers(end).rank = 3;
+    
+    if nargin >= 1 && ~isempty(rank)
+        solvers([solvers.rank] ~= rank) = [];
+    end
+    if nargin >= 2 && ~isempty(m)
+        solvers([solvers.m] ~= m) = [];
+    end
+    if nargin >= 3 && ~isempty(n)
+        solvers([solvers.n] ~= n) = [];
+    end
 end
 
