@@ -8,3 +8,4 @@ In this paper we study the problem of estimating receiver and sender positions u
 1. Clone this repository.
 2. The upgrade solvers from [https://github.com/martinkjlarsson/upgrade-methods](https://github.com/martinkjlarsson/upgrade-methods) are needed. Clone that repository and run `buildMexSolvers.m` as instructed in the README. Place `upgrade-methods` and `tdoa-self-calibration` in the same folder, or make sure `upgrade-methods` is added to the path in MATLAB.
 3. In MATLAB, run `startup.m` to setup the path.
+4. Tests scripts for evaluating the minimal offset solvers and running the full TDOA system on real and sythetic data can be found in the `tests` folder.

@@ -30,11 +30,11 @@ valid_display = @(x) ismember(x, {'off', 'none', 'iter'});
 addParameter(p, 'display', 'off', valid_display);
 addParameter(p, 'offsetsolver', default_solver);
 addParameter(p, 'sigma', 0.01);
-addParameter(p, 'mul1', 4);
-addParameter(p, 'mul2', 6);
-addParameter(p, 'mul3', 10);
-addParameter(p, 'mul4', 12);
-addParameter(p, 'mul5', inf);
+addParameter(p, 'mul1', 4); % Sets threshold based on sigma.
+addParameter(p, 'mul2', 6); % Sets threshold based on sigma.
+addParameter(p, 'mul3', 10); % Sets threshold based on sigma.
+addParameter(p, 'mul4', 12); % Sets threshold based on sigma.
+addParameter(p, 'mul5', inf); % Sets threshold based on sigma.
 parse(p, varargin{:});
 opts = p.Results;
 
